@@ -11,7 +11,7 @@ public class FlightPlanValidator {
     public ValidationResult validate(FlightPlan fp) {
         var combinedValidationResult = new ValidationResult();
         rules.forEach(rule -> {
-            var result = rule.check(fp);
+            var result = rule.validate(fp);
             combinedValidationResult.errors().addAll(result.errors());
         });
 

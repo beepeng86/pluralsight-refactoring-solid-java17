@@ -34,8 +34,8 @@ public class Main {
         );
 
         var validator = new FlightPlanValidator();
-        validator.registerRule(new CallSignNotEmpty());
-        validator.registerRule(new DepartureDifferentFromDestination());
+        validator.registerRule(ValidationRule.CALL_SIGN_NOT_EMPTY);
+        validator.registerRule(ValidationRule.DEPARTURE_DESTINATION_SAME);
 
         for (var i = 0; i < flightPlans.size(); i++) {
             out.println("Flight plan " + i + " -> " + validator.validate(flightPlans.get(i)));
